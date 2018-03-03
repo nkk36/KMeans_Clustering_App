@@ -1,6 +1,15 @@
+library(dbplyr)
+library(dplyr)
+library(DT)
+library(Hmisc)
 library(magrittr)
+library(Matrix)
+library(networkD3)
+library(plotly)
+library(reshape2)
 library(shiny)
 library(shinycssloaders)
+library(shinydashboard)
 
 shinyUI(navbarPage(
   title = "Clustering with Major NAICS Categories",

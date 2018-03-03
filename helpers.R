@@ -31,7 +31,7 @@ Get_NAICS_Data = function(connection){
 # Get_Company_Crosswalk ==================================================
 Get_Company_Crosswalk = function(connection){
   
-  temp = con %>% 
+  temp = connection %>% 
     tbl("indices_values_duns_vendornames_dobl_2D_naics") %>%
     collect()
   
@@ -41,7 +41,7 @@ Get_Company_Crosswalk = function(connection){
 # Get_Data_for_Clustering ==================================================
 Get_Data_for_Clustering = function(connection){
   
-  temp = con %>%
+  temp = connection %>%
     tbl("indices_values_dobl_2D_naics") %>%
     collect()
 

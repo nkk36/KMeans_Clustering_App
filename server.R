@@ -1,16 +1,19 @@
 library(dbplyr)
 library(dplyr)
 library(DT)
+library(Hmisc)
+library(magrittr)
 library(Matrix)
 library(networkD3)
 library(plotly)
 library(reshape2)
 library(shiny)
+library(shinydashboard)
 source("helpers.R")
 load("cluster_kmeans.RData")
 
-# # Connect with database
-# con = Establish_Connection()
+# Connect with database
+con = Establish_Connection()
 
 # Define server logic 
 shinyServer(function(input, output) {
@@ -125,6 +128,7 @@ shinyServer(function(input, output) {
                        
                        })
     
+    naics = Get_NAICS_Data(connection = con)
     num_cluster = as.numeric(input$num_cluster)
     
     vals = unique(scales::rescale(c(heatmap[[num_cluster - 1]])))
@@ -136,7 +140,7 @@ shinyServer(function(input, output) {
     
     p = plot_ly(x = 1:num_cluster,
                 text = ~matrix(rep(paste("Major NAICS Category: ", 
-                                         naics_2D$Sector, sep = ""), 
+                                         naics$Sector, sep = ""), 
                                    num_cluster), 
                                ncol = num_cluster, 
                                nrow = 24),
@@ -203,6 +207,8 @@ shinyServer(function(input, output) {
     num_cluster = as.numeric(input$num_cluster)
     
     companies = Get_Company_Crosswalk(connection = con)
+    naics = Get_NAICS_Data(connection = con)
+    
     cluster_categories = Get_Major_Cluster_Categories(Cluster_KMeans[[num_cluster - 1]]$centers, naics)
     
     
