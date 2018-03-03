@@ -4,7 +4,7 @@ The data comes from the Federal Procurement Data System (FPDS) which gives gover
 
 # Methodology
 
-I performed K-Means clustering on the data with the number of clusters ranging from 2 to 50. You can explore each of the 49 clustering schemes on the Clusters tab. Code for this app and clustering can be found on my GitHub. 
+I performed K-Means clustering on the data with the number of clusters ranging from 2 to 50. You can explore each of the 49 clustering schemes on the Clusters tab. Code for this app and clustering can be found on my GitHub [here](https://github.com/nkk36/KMeans_Clustering_App). 
 
 # Contact
 

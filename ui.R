@@ -11,6 +11,9 @@ library(shiny)
 library(shinycssloaders)
 library(shinydashboard)
 
+source("set_environment_variables.R")
+set_environment_variables(TRUE)
+
 shinyUI(navbarPage(
   title = "Clustering with Major NAICS Categories",
   windowTitle = "Clustering with Major NAICS Categories",

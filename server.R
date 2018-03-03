@@ -10,7 +10,10 @@ library(reshape2)
 library(shiny)
 library(shinydashboard)
 source("helpers.R")
+source("set_environment_variables.R")
+set_environment_variables(TRUE)
 load("cluster_kmeans.RData")
+
 
 # Connect with database
 con = Establish_Connection()

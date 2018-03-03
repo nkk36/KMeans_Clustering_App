@@ -3,6 +3,10 @@
 library(DBI)
 library(dbplyr)
 library(RMySQL)
+
+# source("set_environment_variables.R")
+# set_environment_variables(TRUE)
+
 #########################
 # Helper Functions:  ####
 #########################
